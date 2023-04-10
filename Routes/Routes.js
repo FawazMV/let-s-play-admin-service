@@ -6,7 +6,7 @@ import { getUsers } from '../Controllers/UserControllers.js';
 import { authVeify } from '../Helpers/JWT.js';
 const router = express.Router()
 
-router.post('/admin-login', authVeify, login)
+router.post('/admin-login', login)
 
 router.get('/turf-requests', authVeify, getTurfRequests)
 
