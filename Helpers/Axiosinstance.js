@@ -2,7 +2,7 @@ import Axios from 'axios'
 
 
 export const Axiosbooking = Axios.create({
-    baseURL: 'http://54.206.59.235'
+    baseURL: 'http://localhost:4321'
 })
 
 export const Axiosuser = Axios.create({

@@ -4,13 +4,14 @@ import Router from './Routes/Routes.js'
 import dashboard from './Routes/DashboardRoutes.js'
 import mongoose from 'mongoose'
 import cors from 'cors'
+import connectDB from './Models/config.js'
 
 
 dotenv.config()
 const app = express()
 app.use(express.json());
 const corsOptions = {
-    origin: 'https://let-s-play.onrender.com',
+    origin: ['https://let-s-play.onrender.com', 'http://localhost:1234'],
     methods: 'GET,POST,PATCH,PUT,DELETE',
     preflightContinue: true,
     optionsSuccessStatus: 200,
@@ -19,13 +20,15 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 
-const DATABASE_URL = process.env.DATABASE_URL
-mongoose.set("strictQuery", false);
-mongoose.connect(DATABASE_URL, () => console.log('Database Connected'))
-
-
-app.listen(7171, () => console.log('Connected to server 7171'))
 
 app.use('/', Router)
 
-app.use('/dashboard', dashboard) 
+app.use('/dashboard', dashboard)
+
+connectDB()
+mongoose.connection.once("open", () => {
+    console.log("Connected to MongoDB");
+    app.listen(7171, () => {
+        console.log(`Server running on port 7171 - admin service`);
+    });
+});
