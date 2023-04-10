@@ -2,13 +2,13 @@ import Axios from 'axios'
 
 
 export const Axiosbooking = Axios.create({
-    baseURL: 'http://localhost:4321'
+    baseURL: 'https://let-s-play-booking-service.onrender.com'
 })
 
 export const Axiosuser = Axios.create({
-    baseURL: 'http://3.26.144.127'
+    baseURL: 'https://let-s-play-user-service.onrender.com'
 })
 
 export const Axiosturf = Axios.create({
-    baseURL: 'http://3.27.116.175'
+    baseURL: 'https://let-s-play-turf-service.onrender.com'
 })
