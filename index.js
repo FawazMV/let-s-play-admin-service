@@ -11,7 +11,7 @@ dotenv.config()
 const app = express()
 app.use(express.json());
 const corsOptions = {
-    origin: ['https://let-s-play.onrender.com', 'https://master.d3djpoiqsdvkks.amplifyapp.com/admin/'],
+    origin: ['https://let-s-play.onrender.com', 'https://master.d3djpoiqsdvkks.amplifyapp.com/'],
     methods: 'GET,POST,PATCH,PUT,DELETE',
     preflightContinue: true,
     optionsSuccessStatus: 200,
