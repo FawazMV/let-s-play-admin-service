@@ -12,11 +12,11 @@ router.get('/turf-requests', authVeify, getTurfRequests)
 
 router.get('/turf-accepted', authVeify, getTurfsAccepted)
 
-router.patch('/turf-accept', authVeify, reqAccept)
+router.put('/turf-accept', authVeify, reqAccept)
 
 router.delete('/turf-cancel', authVeify, reqCancel)
 
-router.patch('/turf-manage', authVeify, ManageTurf)
+router.put('/turf-manage', authVeify, ManageTurf)
 
 
 
@@ -35,6 +35,6 @@ router.get('/all-booking-report', authVeify, getReports)
 
 router.get('/payment-requests', authVeify, getPaymentRequests)
 
-router.patch('/payment-confirm', authVeify, confirmPaymentRequest)
+router.put('/payment-confirm', authVeify, confirmPaymentRequest)
 
 export default router   

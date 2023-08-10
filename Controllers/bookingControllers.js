@@ -20,7 +20,7 @@ export const getPaymentRequests = async (req, res) => {
 
 export const confirmPaymentRequest = async (req, res) => {
     try {
-        const response = await axios.patch('/payment-confirm', { id: req.body.id })
+        const response = await axios.put('/payment-confirm', { id: req.body.id })
         return res.status(200).json(response.data)
     } catch (error) {
         return res.status(500).json({ error: 'Internal server error', err: error })
